@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lila'ya Kalan Süre 💜</title>
+
+<style>
+
+/* =========================================================
+   TEMEL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e7c8ff 0%,
+            #d9b7ff 18%,
+            #f7c9df 43%,
+            #ffd8c8 65%,
+            #dcbfff 100%
+        );
+
+    position: relative;
+}
+
+
+/* =========================================================
+   ARKA PLAN GRADYAN
+========================================================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,255,255,.55),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(255,210,235,.65),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 80% 85%,
+            rgba(194,164,255,.45),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #dcb8ff,
+            #f7c8df,
+            #ffd9c7,
+            #cdb5ff
+        );
+
+    z-index: -10;
+}
+
+
+/* =========================================================
+   HAREKETLİ IŞIKLAR
+========================================================= */
+
+.glow {
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    filter: blur(70px);
+
+    opacity: .35;
+
+    animation:
+        glowMove
+        16s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+.glow.one {
+    background: #ffffff;
+
+    left: -120px;
+    top: -100px;
+}
+
+.glow.two {
+    background: #c9a1ff;
+
+    right: -130px;
+    top: 25%;
+
+    animation-delay: -6s;
+}
+
+.glow.three {
+    background: #ffb8d8;
+
+    left: 30%;
+    bottom: -180px;
+
+    animation-delay: -11s;
+}
+
+@keyframes glowMove {
+
+    from {
+        transform:
+            translate(
+                -30px,
+                20px
+            )
+            scale(1);
+    }
+
+    to {
+        transform:
+            translate(
+                70px,
+                -50px
+            )
+            scale(1.3);
+    }
+}
+
+
+/* =========================================================
+   KÜÇÜK PARILTILAR
+========================================================= */
+
+.sparkles {
+    position: absolute;
+    inset: 0;
+}
+
+.sparkle {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px
+        rgba(255,255,255,.9);
+
+    animation:
+        sparkle
+        var(--duration)
+        ease-in-out
+        infinite;
+
+    animation-delay:
+        var(--delay);
+}
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        opacity: .15;
+        transform: scale(.6);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+
+/* =========================================================
+   UÇAN OBJELER
+========================================================= */
+
+.floating {
+    position: absolute;
+
+    pointer-events: none;
+
+    animation:
+        float
+        var(--speed)
+        ease-in-out
+        infinite
+        alternate;
+
+    animation-delay:
+        var(--delay);
+}
+
+
+/* =========================================================
+   KALPLER
+========================================================= */
+
+.heart {
+    width: 22px;
+    height: 22px;
+
+    background:
+        rgba(255,255,255,.58);
+
+    transform:
+        rotate(-45deg);
+
+    filter:
+        drop-shadow(
+            0 5px 10px
+            rgba(150,100,170,.18)
+        );
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+
+    position: absolute;
+
+    width: 22px;
+    height: 22px;
+
+    background:
+        rgba(255,255,255,.58);
+
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -11px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 11px;
+}
+
+
+/* =========================================================
+   EMZİKLER
+========================================================= */
+
+.pacifier {
+    position: relative;
+
+    width: 40px;
+    height: 40px;
+}
+
+.pacifier .ring {
+
+    position: absolute;
+
+    width: 16px;
+    height: 16px;
+
+    border:
+        4px solid
+        rgba(255,255,255,.65);
+
+    border-radius: 50%;
+
+    left: 0;
+    top: 12px;
+}
+
+.pacifier .shield {
+
+    position: absolute;
+
+    width: 22px;
+    height: 17px;
+
+    border-radius:
+        50% 50% 45% 45%;
+
+    background:
+        rgba(221,188,255,.75);
+
+    left: 13px;
+    top: 11px;
+
+    box-shadow:
+        inset 0 2px
+        rgba(255,255,255,.35);
+}
+
+.pacifier .nipple {
+
+    position: absolute;
+
+    width: 9px;
+    height: 15px;
+
+    border-radius:
+        60% 60% 50% 50%;
+
+    background:
+        rgba(255,224,230,.85);
+
+    left: 19px;
+    top: 26px;
+
+    transform:
+        rotate(8deg);
+}
+
+
+/* =========================================================
+   KURDELE
+========================================================= */
+
+.ribbon {
+    position: relative;
+
+    width: 42px;
+    height: 42px;
+}
+
+.ribbon::before,
+.ribbon::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 20px;
+    height: 26px;
+
+    background:
+        rgba(255,255,255,.55);
+
+    border-radius:
+        5px 14px 5px 14px;
+
+    top: 8px;
+}
+
+.ribbon::before {
+
+    left: 1px;
+
+    transform:
+        rotate(35deg);
+}
+
+.ribbon::after {
+
+    right: 1px;
+
+    transform:
+        rotate(-35deg);
+}
+
+.ribbon .knot {
+
+    position: absolute;
+
+    width: 13px;
+    height: 13px;
+
+    background:
+        #e7b8ef;
+
+    border-radius: 50%;
+
+    left: 14px;
+    top: 13px;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   YILDIZ
+========================================================= */
+
+.star {
+
+    width: 24px;
+    height: 24px;
+
+    position: relative;
+
+    color:
+        rgba(255,255,255,.65);
+
+    font-size: 25px;
+
+    line-height: 24px;
+
+    text-align: center;
+}
+
+.star::before {
+    content: "✦";
+}
+
+
+/* =========================================================
+   BALONCUK
+========================================================= */
+
+.bubble {
+
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    border:
+        2px solid
+        rgba(255,255,255,.48);
+
+    background:
+        rgba(255,255,255,.14);
+
+    box-shadow:
+        inset 4px 4px
+        rgba(255,255,255,.25);
+
+}
+
+
+/* =========================================================
+   UÇUŞ ANİMASYONU
+========================================================= */
+
+@keyframes float {
+
+    from {
+
+        transform:
+            translate3d(
+                var(--x1),
+                var(--y1),
+                0
+            )
+            rotate(var(--r1));
+
+    }
+
+    to {
+
+        transform:
+            translate3d(
+                var(--x2),
+                var(--y2),
+                0
+            )
+            rotate(var(--r2));
+
+    }
+}
+
+
+/* =========================================================
+   ANA KONTEYNER
+========================================================= */
+
+.container {
+
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+}
+
+
+/* =========================================================
+   ANA CAM KART
+========================================================= */
+
+.card {
+
+    width:
+        min(850px, 94vw);
+
+    padding:
+        48px 50px 42px;
+
+    border-radius: 34px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.42),
+            rgba(255,255,255,.20)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.62);
+
+    box-shadow:
+
+        0 30px 80px
+        rgba(116,74,150,.20),
+
+        inset 0 1px
+        rgba(255,255,255,.8);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    position: relative;
+
+    z-index: 20;
+
+    overflow: hidden;
+}
+
+
+/* hafif kart parlaması */
+
+.card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.20);
+
+    filter: blur(50px);
+
+    top: -180px;
+    left: 30%;
+
+}
+
+
+/* =========================================================
+   ÜST SÜS
+========================================================= */
+
+.top-decoration {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+.top-decoration .line {
+
+    width: 75px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.7)
+        );
+}
+
+.top-decoration .line:last-child {
+
+    transform:
+        scaleX(-1);
+}
+
+.top-heart {
+
+    font-size: 23px;
+
+    color: #fff;
+
+    filter:
+        drop-shadow(
+            0 3px 7px
+            rgba(120,70,150,.2)
+        );
+}
+
+
+/* =========================================================
+   BAŞLIK
+========================================================= */
+
+.title {
+
+    text-align: center;
+
+    color: #704b86;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(42px, 7vw, 75px);
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 3px 10px
+        rgba(255,255,255,.65);
+}
+
+.title span {
+
+    display: block;
+
+    margin-top: 12px;
+
+    color: #9b70b2;
+
+    font-family:
+        "Trebuchet MS",
+        sans-serif;
+
+    font-size:
+        clamp(17px, 3vw, 24px);
+
+    font-weight: 500;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TARİH
+========================================================= */
+
+.date {
+
+    width: max-content;
+
+    max-width: 100%;
+
+    margin:
+        27px auto
+        30px;
+
+    padding:
+        9px 24px;
+
+    border-radius: 100px;
+
+    background:
+        rgba(255,255,255,.32);
+
+    border:
+        1px solid
+        rgba(255,255,255,.55);
+
+    color: #78558e;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+}
+
+
+/* =========================================================
+   SAYAÇ
+========================================================= */
+
+.countdown {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 13px;
+}
+
+.unit {
+
+    padding:
+        25px 8px
+        20px;
+
+    text-align: center;
+
+    border-radius: 21px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.48),
+            rgba(255,255,255,.18)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.60);
+
+    box-shadow:
+        0 10px 25px
+        rgba(120,80,150,.08);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.unit::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 80px;
+    height: 80px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.28);
+
+    filter: blur(20px);
+
+    top: -50px;
+    left: -20px;
+}
+
+.number {
+
+    position: relative;
+
+    color: #76548b;
+
+    font-size:
+        clamp(47px, 7vw, 78px);
+
+    font-weight: 800;
+
+    line-height: .9;
+
+    letter-spacing: 1px;
+
+    font-variant-numeric:
+        tabular-nums;
+}
+
+.label {
+
+    margin-top: 13px;
+
+    color: #9a7ca9;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   ALT YAZI
+========================================================= */
+
+.bottom {
+
+    text-align: center;
+
+    margin-top: 28px;
+
+    color: #9676a6;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+.bottom strong {
+
+    color: #7b5a91;
+}
+
+
+/* =========================================================
+   MOBİL
+========================================================= */
+
+@media(max-width: 650px) {
+
+    .card {
+
+        padding:
+            34px
+            17px
+            28px;
+
+        border-radius: 27px;
+    }
+
+    .title {
+
+        font-size: 42px;
+    }
+
+    .title span {
+
+        font-size: 17px;
+
+        letter-spacing: 3px;
+    }
+
+    .date {
+
+        font-size: 10px;
+
+        letter-spacing: 2px;
+
+        padding:
+            8px 15px;
+
+        margin:
+            21px auto
+            24px;
+    }
+
+    .countdown {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 9px;
+    }
+
+    .unit {
+
+        padding:
+            21px 5px
+            17px;
+
+        border-radius: 17px;
+    }
+
+    .number {
+
+        font-size: 53px;
+    }
+
+    .label {
+
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+
+    .bottom {
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+    .floating {
+
+        transform: scale(.7);
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     ARKA PLAN
+===================================================== -->
+
+<div class="background">
+
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+    <div class="glow three"></div>
+
+
+    <!-- PARILTILAR -->
+
+    <div
+        class="sparkles"
+        id="sparkles">
+    </div>
+
+
+    <!-- KALPLER -->
+
+    <div
+        class="floating heart"
+        style="
+            left:8%;
+            top:18%;
+            --speed:9s;
+            --delay:-2s;
+            --x1:0px;
+            --y1:0px;
+            --x2:50px;
+            --y2:-80px;
+            --r1:-45deg;
+            --r2:-20deg;
+        ">
+    </div>
+
+
+    <div
+        class="floating heart"
+        style="
+            right:9%;
+            top:25%;
+            transform:scale(.7);
+            --speed:13s;
+            --delay:-5s;
+            --x1:0px;
+            --y1:0px;
+            --x2:-60px;
+            --y2:70px;
+            --r1:-45deg;
+            --r2:-65deg;
+        ">
+    </div>
+
+
+    <div
+        class="floating heart"
+        style="
+            left:18%;
+            bottom:17%;
+            transform:scale(.55);
+            --speed:11s;
+            --delay:-7s;
+            --x1:0px;
+            --y1:0px;
+            --x2:-50px;
+            --y2:-65px;
+            --r1:-45deg;
+            --r2:-25deg;
+        ">
+    </div>
+
+
+    <!-- EMZİKLER -->
+
+    <div
+        class="floating pacifier"
+        style="
+            left:13%;
+            top:58%;
+            --speed:14s;
+            --delay:-3s;
+            --x1:0px;
+            --y1:0px;
+            --x2:80px;
+            --y2:-100px;
+            --r1:-10deg;
+            --r2:20deg;
+        ">
+
+        <div class="ring"></div>
+        <div class="shield"></div>
+        <div class="nipple"></div>
+
+    </div>
+
+
+    <div
+        class="floating pacifier"
+        style="
+            right:13%;
+            bottom:18%;
+            transform:scale(.7);
+            --speed:17s;
+            --delay:-10s;
+            --x1:0px;
+            --y1:0px;
+            --x2:-90px;
+            --y2:-70px;
+            --r1:10deg;
+            --r2:-20deg;
+        ">
+
+        <div class="ring"></div>
+        <div class="shield"></div>
+        <div class="nipple"></div>
+
+    </div>
+
+
+    <!-- KURDELELER -->
+
+    <div
+        class="floating ribbon"
+        style="
+            left:27%;
+            top:10%;
+            --speed:12s;
+            --delay:-3s;
+            --x1:0px;
+            --y1:0px;
+            --x2:-40px;
+            --y2:70px;
+            --r1:0deg;
+            --r2:18deg;
+        ">
+
+        <div class="knot"></div>
+
+    </div>
+
+
+    <div
+        class="floating ribbon"
+        style="
+            right:21%;
+            bottom:13%;
+            transform:scale(.65);
+            --speed:15s;
+            --delay:-9s;
+            --x1:0px;
+            --y1:0px;
+            --x2:60px;
+            --y2:-90px;
+            --r1:0deg;
+            --r2:-25deg;
+        ">
+
+        <div class="knot"></div>
+
+    </div>
+
+
+    <!-- YILDIZLAR -->
+
+    <div
+        class="floating star"
+        style="
+            left:5%;
+            top:72%;
+            --speed:10s;
+            --delay:-4s;
+            --x1:0px;
+            --y1:0px;
+            --x2:30px;
+            --y2:-80px;
+            --r1:0deg;
+            --r2:30deg;
+        ">
+    </div>
+
+
+    <div
+        class="floating star"
+        style="
+            right:6%;
+            top:60%;
+            transform:scale(.7);
+            --speed:13s;
+            --delay:-8s;
+            --x1:0px;
+            --y1:0px;
+            --x2:-50px;
+            --y2:-60px;
+            --r1:0deg;
+            --r2:-30deg;
+        ">
+    </div>
+
+
+    <!-- BALONCUKLAR -->
+
+    <div
+        class="floating bubble"
+        style="
+            left:30%;
+            bottom:5%;
+            --speed:18s;
+            --delay:-4s;
+            --x1:0px;
+            --y1:0px;
+            --x2:60px;
+            --y2:-150px;
+            --r1:0deg;
+            --r2:0deg;
+        ">
+    </div>
+
+
+    <div
+        class="floating bubble"
+        style="
+            right:30%;
+            top:7%;
+            transform:scale(.65);
+            --speed:16s;
+            --delay:-10s;
+            --x1:0px;
+            --y1:0px;
+            --x2:-70px;
+            --y2:130px;
+            --r1:0deg;
+            --r2:0deg;
+        ">
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     ANA KART
+===================================================== -->
+
+<main class="container">
+
+<section class="card">
+
+
+    <div class="top-decoration">
+
+        <div class="line"></div>
+
+        <div class="top-heart">
+            ♡
+        </div>
+
+        <div class="line"></div>
+
+    </div>
+
+
+    <h1 class="title">
+
+        Lila
+
+        <span>
+            Doğum Gününe Kalan Süre
+        </span>
+
+    </h1>
+
+
+    <div class="date">
+
+        16 KASIM 2026
+
+    </div>
+
+
+    <div class="countdown">
+
+
+        <div class="unit">
+
+            <div
+                class="number"
+                id="days">
+                00
+            </div>
+
+            <div class="label">
+                Gün
+            </div>
+
+        </div>
+
+
+        <div class="unit">
+
+            <div
+                class="number"
+                id="hours">
+                00
+            </div>
+
+            <div class="label">
+                Saat
+            </div>
+
+        </div>
+
+
+        <div class="unit">
+
+            <div
+                class="number"
+                id="minutes">
+                00
+            </div>
+
+            <div class="label">
+                Dakika
+            </div>
+
+        </div>
+
+
+        <div class="unit">
+
+            <div
+                class="number"
+                id="seconds">
+                00
+            </div>
+
+            <div class="label">
+                Saniye
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="bottom">
+
+        <strong>
+            ♡ LILA'YI BEKLERKEN ♡
+        </strong>
+
+        <br><br>
+
+        Minik bir mucizeye kalan süre
+
+    </div>
+
+
+</section>
+
+</main>
+
+
+
+<script>
+
+/* =========================================================
+   GERİ SAYIM
+========================================================= */
+
+
+/*
+   Lila'nın doğum günü:
+
+   16 Kasım 2026
+   Saat 00:00
+*/
+
+const target =
+    new Date(
+        "2026-11-16T00:00:00"
+    ).getTime();
+
+
+function updateCountdown() {
+
+    let difference =
+        target - Date.now();
+
+
+    /*
+       Tarih geldiyse
+    */
+
+    if (difference <= 0) {
+
+        document
+            .getElementById("days")
+            .textContent = "00";
+
+        document
+            .getElementById("hours")
+            .textContent = "00";
+
+        document
+            .getElementById("minutes")
+            .textContent = "00";
+
+        document
+            .getElementById("seconds")
+            .textContent = "00";
+
+        return;
+    }
+
+
+    /*
+       Gün
+    */
+
+    const days =
+        Math.floor(
+            difference / 86400000
+        );
+
+    difference %= 86400000;
+
+
+    /*
+       Saat
+    */
+
+    const hours =
+        Math.floor(
+            difference / 3600000
+        );
+
+    difference %= 3600000;
+
+
+    /*
+       Dakika
+    */
+
+    const minutes =
+        Math.floor(
+            difference / 60000
+        );
+
+
+    /*
+       Saniye
+    */
+
+    const seconds =
+        Math.floor(
+            (difference % 60000) / 1000
+        );
+
+
+    document
+        .getElementById("days")
+        .textContent =
+        days;
+
+
+    document
+        .getElementById("hours")
+        .textContent =
+        String(hours)
+        .padStart(2,"0");
+
+
+    document
+        .getElementById("minutes")
+        .textContent =
+        String(minutes)
+        .padStart(2,"0");
+
+
+    document
+        .getElementById("seconds")
+        .textContent =
+        String(seconds)
+        .padStart(2,"0");
+
+}
+
+
+updateCountdown();
+
+
+setInterval(
+    updateCountdown,
+    1000
+);
+
+
+
+/* =========================================================
+   PARILTILARI OLUŞTUR
+========================================================= */
+
+const sparkleContainer =
+    document.getElementById(
+        "sparkles"
+    );
+
+
+for (
+    let i = 0;
+    i < 45;
+    i++
+) {
+
+    const sparkle =
+        document.createElement(
+            "div"
+        );
+
+
+    sparkle.className =
+        "sparkle";
+
+
+    sparkle.style.left =
+        Math.random() * 100 + "%";
+
+
+    sparkle.style.top =
+        Math.random() * 100 + "%";
+
+
+    sparkle.style.setProperty(
+        "--duration",
+        (2 + Math.random() * 4) + "s"
+    );
+
+
+    sparkle.style.setProperty(
+        "--delay",
+        (-Math.random() * 5) + "s"
+    );
+
+
+    sparkleContainer.appendChild(
+        sparkle
+    );
+
+}
+
+</script>
+
+</body>
+</html>
